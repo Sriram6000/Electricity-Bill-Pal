@@ -1,0 +1,39 @@
+Prerequisites
+Before setting up the project, ensure you have the following:
+
+Power Platform Access (Power Apps, Power Automate, and Dataverse)
+A Microsoft 365 Account with permissions to create Dataverse tables
+AI Builder license (for document processing)
+Git & GitHub (if cloning the repo)
+
+Installation Steps
+1. Clone the Repository (Optional)
+If you're working from GitHub, clone the repo:
+
+      git clone https://github.com/Sriram6000/electricity-bill-pal.git
+      cd electricity-bill-pal
+
+2. Set Up Dataverse Tables
+  Open Power Apps → Dataverse → Tables.
+  Create the following tables:
+  Electricity Bills (Columns: USC No, Bill Amount, Due Date, Resident Email, etc.)
+  Residents (Columns: USC No, Name, Door No, Email, etc.)
+  Import sample data if required.
+3. Deploy the Canvas App
+  Open Power Apps → Apps → Import Canvas App.
+  Upload the ElectricityBillPal.msapp file from the repo.
+  Edit the app settings (if required).
+4. Set Up Power Automate Flows
+  Open Power Automate → Import Flow.
+  Select the BillProcessingFlow.zip file.
+  Modify connections to Dataverse, AI Builder, and Email.
+  Enable the flow.
+5. Configure AI Document Processing
+  Open Power Automate → AI Models.
+  Create a new Document Processing Model.
+  Train the model using sample bills.
+  Integrate the trained model into the flow.
+6. Test the Workflow
+  Take a picture of a sample bill using the Canvas App.
+  Ensure that the bill details are extracted and stored in Dataverse.
+  Check if an email with the bill details is sent to the resident.
